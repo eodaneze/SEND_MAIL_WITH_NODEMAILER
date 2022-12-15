@@ -19,13 +19,13 @@ app.post("/api/sendEmail", async(req, res) => {
      const {email} = req.body;
 
      try{
-          const send_to = "ezealiokechukwu1999@gmail.com";
+          const send_to = email;
           const sent_from = process.env.EMAIL_USER;
-          const reply_to = "ezealiokechukwu1999@gmail.com";
+          const reply_to = email;
           const subject = "Thank You Message From Dev_Daniels";
           const message = `
               <h3>Hello Daniel</h3>
-              <p>Thank for your YouTube Tutorials</p>
+              <p>This was done using a nodemailer</p>
               <p>Regards...</p>
           `;
         await sendEmail(subject, message, send_to, sent_from, reply_to)
